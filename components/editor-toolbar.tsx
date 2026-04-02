@@ -27,8 +27,8 @@ interface EditorToolbarProps {
 }
 
 const tabs: { id: InputTab; label: string; icon: React.ElementType }[] = [
-  { id: "edit", label: "编辑", icon: Keyboard },
-  { id: "file", label: "文件", icon: FileCode },
+  { id: "edit", label: "Edit", icon: Keyboard },
+  { id: "file", label: "File", icon: FileCode },
   { id: "url", label: "URL", icon: Globe },
 ]
 
@@ -76,7 +76,7 @@ export function EditorToolbar({
           type="button"
           onClick={onFormat}
           disabled={!isValidJson}
-          title="格式化"
+          title="Format"
           className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-40"
         >
           <Braces className="size-3.5" />
@@ -85,7 +85,7 @@ export function EditorToolbar({
           type="button"
           onClick={onMinify}
           disabled={!isValidJson}
-          title="压缩"
+          title="Minify"
           className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-40"
         >
           <Minimize2 className="size-3.5" />
@@ -97,7 +97,7 @@ export function EditorToolbar({
           type="button"
           onClick={handleCopy}
           disabled={!hasContent}
-          title="复制"
+          title="Copy"
           className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-40"
         >
           {copied ? (
@@ -110,7 +110,7 @@ export function EditorToolbar({
           type="button"
           onClick={onDownload}
           disabled={!hasContent}
-          title="下载"
+          title="Download"
           className="inline-flex items-center justify-center rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground disabled:pointer-events-none disabled:opacity-40"
         >
           <Download className="size-3.5" />

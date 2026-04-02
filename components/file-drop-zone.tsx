@@ -61,8 +61,8 @@ export function FileDropZone({ onFileContent }: FileDropZoneProps) {
     >
       <FileUp className="size-8 text-muted-foreground" />
       <div className="text-center text-sm">
-        <p className="font-medium text-foreground">拖拽 JSON 文件到此处</p>
-        <p className="mt-1 text-muted-foreground">或点击选择文件</p>
+        <p className="font-medium text-foreground">Drop a JSON file here</p>
+        <p className="mt-1 text-muted-foreground">or click to browse</p>
       </div>
       <input
         ref={inputRef}

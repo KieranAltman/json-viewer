@@ -17,7 +17,8 @@ import { Button } from "@/components/ui/button"
 import { UrlLoader } from "@/components/url-loader"
 import { useJsonParser } from "@/hooks/use-json-parser"
 import { useResize } from "@/hooks/use-resize"
-import { Braces, Moon, Sun } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
+import Image from "next/image"
 import { useTheme } from "next-themes"
 import { useCallback, useEffect, useRef, useState } from "react"
 
@@ -124,7 +125,7 @@ export default function Page() {
     <div className="flex h-svh flex-col">
       <header className="flex items-center justify-between border-b px-4 py-2">
         <div className="flex items-center gap-2">
-          <Braces className="size-4 text-muted-foreground" />
+          <Image src="/logo.svg" alt="JSON Viewer" width={24} height={24} className="rounded" />
           <h1 className="text-sm font-semibold">JSON Viewer</h1>
         </div>
         <Button
@@ -202,13 +203,13 @@ export default function Page() {
             />
           ) : (
             <div className="flex h-full flex-col items-center justify-center gap-4 text-muted-foreground">
-              <Braces className="size-12 opacity-20" />
+              <Image src="/logo.svg" alt="" width={48} height={48} className="rounded-lg opacity-50" />
               <div className="text-center">
                 <p className="text-sm font-medium">
-                  在左侧输入或粘贴 JSON 数据
+                  Enter or paste JSON in the left panel
                 </p>
                 <p className="mt-1 text-xs">
-                  支持文本编辑、文件拖拽和 URL 加载
+                  Supports text editing, file drag-and-drop, and URL loading
                 </p>
               </div>
               <Button
@@ -216,14 +217,14 @@ export default function Page() {
                 size="sm"
                 onClick={handleLoadSample}
               >
-                加载示例数据
+                Load Sample
               </Button>
             </div>
           )}
 
           {error && hasContent && parsedData !== null && (
             <div className="absolute bottom-0 left-0 right-0 border-t bg-destructive/10 px-4 py-2 text-xs text-destructive">
-              JSON 解析错误：{error}
+              JSON parse error: {error}
             </div>
           )}
         </div>

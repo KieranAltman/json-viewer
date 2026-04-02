@@ -28,10 +28,10 @@ export function UrlLoader({ onContent }: UrlLoaderProps) {
       onContent(text)
     } catch (err) {
       const message =
-        err instanceof Error ? err.message : "加载失败"
+        err instanceof Error ? err.message : "Failed to load"
       setError(
         message.includes("Failed to fetch")
-          ? "请求失败，可能是 CORS 限制或网络错误"
+          ? "Request failed, possibly due to CORS restrictions or a network error"
           : message,
       )
     } finally {
@@ -42,7 +42,7 @@ export function UrlLoader({ onContent }: UrlLoaderProps) {
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-4 p-4">
       <Globe className="size-8 text-muted-foreground" />
-      <p className="text-sm font-medium">从 URL 加载 JSON</p>
+      <p className="text-sm font-medium">Load JSON from URL</p>
 
       <div className="flex w-full max-w-md items-stretch gap-2">
         <input
@@ -62,7 +62,7 @@ export function UrlLoader({ onContent }: UrlLoaderProps) {
           {isLoading ? (
             <Loader2 className="size-4 animate-spin" />
           ) : (
-            "加载"
+            "Load"
           )}
         </Button>
       </div>
