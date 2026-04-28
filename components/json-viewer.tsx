@@ -606,7 +606,7 @@ function JsonViewer({
       <div
         data-slot="json-viewer"
         className={cn(
-          "overflow-hidden rounded-xl border border-border/60 bg-card shadow-sm",
+          "flex min-h-0 flex-col overflow-hidden rounded-xl border border-border/60 bg-card shadow-sm",
           className
         )}
         {...props}
@@ -695,7 +695,7 @@ function JsonViewer({
 
         {/* Tree */}
         <div
-          className="overflow-auto py-1"
+          className="min-h-0 flex-1 overflow-auto py-1"
           style={
             resolved
               ? {

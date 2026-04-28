@@ -147,7 +147,7 @@ export default function Page() {
         </Button>
       </header>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex min-h-0 flex-1 overflow-hidden">
         {/* Left panel */}
         <div
           style={{ width: `${leftWidth}%` }}
@@ -194,7 +194,7 @@ export default function Page() {
         />
 
         {/* Right panel */}
-        <div className="min-w-0 flex-1 overflow-auto">
+        <div className="relative flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
           {parsedData !== null ? (
             <JsonViewer
               data={parsedData as JsonValue}
